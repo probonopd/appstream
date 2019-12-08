@@ -27,7 +27,9 @@ RUN apt-get install -yq --no-install-recommends \
     gobject-introspection \
     libstemmer-dev \
     gperf \
-    valac
+    valac \
+    wget \
+    curl
 
 # finish
 RUN mkdir /build

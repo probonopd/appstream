@@ -17,5 +17,5 @@ before_script:
   - if [ "$CC" = "gcc" ]; then export CVENDOR="gcc" CXX="g++" CC="gcc"; fi
 
 script:
-  - docker run -t -e COMPILER_VENDOR=$CVENDOR -e CC=$CC -e CXX=$CXX -v `pwd`:/build appstream
+  - docker run -t -e COMPILER_VENDOR=$CVENDOR -e CC=$CC -e CXX=$CXX --env-file <(env) -v `pwd`:/build appstream
     ./tests/ci/build_and_test.sh
